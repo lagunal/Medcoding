@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67867606-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<meta name="title" content="Medcoding Associates, Miami Florida">
+	<meta name="DC.Title" content="Medcoding Associates, Miami Florida">
+	<meta http-equiv="title" content="Medcoding Associates, Miami Florida">
+	<meta name="description" content="We are an established medical billing company with a team of professional that are ready to take the worries and frustrations of medical billing off of your hands and allow you more time to do what you love, which is take care of you patients.">
+	<meta http-equiv="description" content="We are an established medical billing company with a team of professional that are ready to take the worries and frustrations of medical billing off of your hands and allow you more time to do what you love, which is take care of you patients.">
+	<meta http-equiv="DC.Description" content="We are an established medical billing company with a team of professional that are ready to take the worries and frustrations of medical billing off of your hands and allow you more time to do what you love, which is take care of you patients.">
+	<meta name="keywords" content="medcoding, medical billing, IC9 coding, HIPPA compliance laws, Electronic billing, billing and coding Strategic,, medical billing in miami, florida, HCC Billing ">
+	<meta http-equiv="keywords" content="medcoding, medical billing, IC9 coding, HIPPA compliance laws, Electronic billing, billing and coding Strategic, medical billing in miami, florida, HCC Billing ">
+	<meta name="DC.Language" scheme="RFC1766" content="English">
+	<meta name="distribution" content="global">
+	<meta name="resource-type" content="document">
+	<meta http-equiv="Pragma"   content="cache">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Medcoding Associates | HCC Billing and Coding HEDIS</title>
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/fonts.css" rel="stylesheet">
+    <link href="static/css/medcoding.css" rel="stylesheet">
+ 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script -->
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('a').click(function(e){
+				e.preventDefault();
+				$('html, body').stop().animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
+			});
+			
+			
+			$('#phone').keyup( function (){
+		 		
+				this.value = (this.value + '').replace(/[^0-9+\-Ee.]/g, '');
+
+	  		});
+			
+
+		});
+		
+		function val_email(value)
+		{		 
+			var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+		 
+			if(filter.test(value))
+				return true;
+			else
+				return false;
+		}
+
+		function SendEmail(){
+			
+			var name= $('#name').val();
+			var email= $('#email').val();
+			var phone = $('#phone').val();
+			var msm = $('textarea').val();
+		
+		
+			if (	val_email(email) == true &&  email != "" && phone != "" && msm != "")
+			{
+					$.ajax({type: "POST",
+					data: "name=" + name +"&email=" + email + " &phone=" + phone + "&msm=" + msm,
+					 url: "static/php/smtp-email.php" ,
+			   
+					success: function(msg)
+					{
+						alert(msg);
+					}
+								
+				 });
+			}else{
+			alert("Sorry, something is wrong! Try change your Email Address");
+			}
+				 
+	    }
+	</script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-medcoding">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="static/img/logo.fw.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-menu" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="#a1">How we help</a></li>
+                <li><a href="#a2">Solutions</a></li>
+                <li><a href="#a3">About Us</a></li>
+                <li><a href="#a4">Contact Us</a></li>
+                <li><a href="blog.php">Blog</a></li>
+            </ul>
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li><a href="#">Link</a></li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="#">Action</a></li>-->
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <!--<li><a href="#">Something else here</a></li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <!--<li><a href="#">Separated link</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <div class="row">
+            <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+                <!--<ol class="carousel-indicators">-->
+                    <!--<li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>-->
+                    <!--<li class="" data-target="#carousel-example-captions" data-slide-to="1"></li>-->
+                    <!--<li class="" data-target="#carousel-example-captions" data-slide-to="2"></li>-->
+                    <!--<li class="" data-target="#carousel-example-captions" data-slide-to="3"></li>-->
+                    <!--<li class="" data-target="#carousel-example-captions" data-slide-to="4"></li>-->
+                <!--</ol>-->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item">
+                        <img src="static/img/slider_a.jpg" alt="" class="img-responsive"/>
+                        <div class="carousel-caption caption-carusel">
+                            <h1>Transition to ICD-10</h1>
+                            <h3>with our professional team</h3>
+                            <span>medical billing</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="static/img/slider_b.jpg" alt="" class="img-responsive"/>
+                        <div class="carousel-caption caption-carusel">
+                            <h1>Let us take the worry out</h1>
+                            <h3>of Medical Billing</h3>
+                            <span>medical billing</span>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img src="static/img/slider_c.jpg" alt="" class="img-responsive"/>
+                        <div class="carousel-caption caption-carusel">
+                            <h1>Are you ICD 10 Ready?</h1>
+                            <h3>MedCoding is</h3>
+                            <span>medical billing</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="static/img/slider_d.jpg" alt="" class="img-responsive"/>
+                        <div class="carousel-caption caption-carusel">
+                            <h1>Transition to ICD-10</h1>
+                            <h3>with our professional team</h3>
+                            <span>medical billing</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="static/img/slider_e.jpg" alt="" class="img-responsive"/>
+                        <div class="carousel-caption caption-carusel">
+                            <h1>Transition to ICD-10</h1>
+                            <h3>with our professional team</h3>
+                            <span>medical billing</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                    <img src="static/img/btn_slider_a.png" alt=""/>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                    <img src="static/img/btn_slider_b.png" alt=""/>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        <div class="icon-whohelp text-center"><img src="static/img/ico_how.png" alt=""/></div>
+    </div>
+</div>
+<div class="howhelp-bg">
+    <div class="container">
+        <div class="row">
+		<section id="a1">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+			
+                <div class="content-whohelp">
+                    <div class="text-center titulo whowe-titulo whowe-margin">HOW we help</div>
+                    <div class="text-center whowe-subtitulo whowe-titulo"><strong>ICD-10</strong> Ready for billing and coding Strategic documentation education for providers
+                    Data processing and collection for medical professionals.</div>
+                    <div class="row">
+                        <div class="col-lg-4"><img src="static/img/ico_01.png" alt=""/></div>
+                        <div class="col-lg-6">
+                            <div class="whowe-1">
+                                <h4>specialized in</h4>
+                                <h3>medical billing</h3>
+                                <p>HCC Billing and coding HEDIS data collection Transition to ICD-10 with our professional team. Electronic billing to most national payers with our advanced medical billing software. Medical record reviews</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#" class="btn btn-default btn-medcoding btn-1">See more</a>
+                        </div>
+                    </div>
+                    <div class="row row-margin">
+                        <div class="col-lg-4"><img src="static/img/ico_02.png" alt=""/></div>
+                        <div class="col-lg-6">
+                            <div class="whowe-2">
+                                <h4>In-House</h4>
+                                <h3>medical billing</h3>
+                                <p>Electronic billing to most national payers with our advanced medical billing software</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#" class="btn btn-default btn-medcoding btn-2">See more</a>
+                        </div>
+                    </div>
+                    <div class="row row-margin">
+                        <div class="col-lg-4"><img src="static/img/ico_03.png" alt=""/></div>
+                        <div class="col-lg-6">
+                            <div class="whowe-3">
+                                <h4>Patient</h4>
+                                <h3>record management</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#" class="btn btn-default btn-medcoding btn-3">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
+<div class="solution-bg">
+    <div class="container">
+		
+        <div class="row">
+		<section id="a2">
+            <div class="col-lg-12"><div class="text-center titulo solution-titulo"> &bullet; Solution &bullet;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="solution-icon"><img src="static/img/ico_patient.png" alt="" class="img-responsive"/></div>
+                <div class="text-center solution-content" >
+                    <h3>Patien Record</h3>
+                    <h4>Managemet</h4>
+                    <p>Ease of use for <br >Staff Members.</p>
+                    <p>Accurate Patient <br >Record Keep-ing.</p>
+                    <p>Cloud Base, access <br > 24/7 from Anywhere.</p>
+                </div>
+               <!-- <div class="text-center solution-moreinfo"><a href="#" class="btn btn-moreinfo">More info</a></div>-->
+            </div>
+            <div class="col-lg-4">
+                <div class="solution-icon"><img src="static/img/ico_medical.png" alt="" class="img-responsive"/></div>
+                <div class="text-center solution-content">
+                    <h3>Medical</h3>
+                    <h4>billing</h4>
+                    <p>Help your increase <br >revenue and reduce <br > your bottom line.</p>
+                    <p>Services tailored <br >to your practice.</p>
+                    <p>ICD9 and ICD10  <br > Trained and Certified.</p>
+                </div>
+              <!--  <div class="text-center solution-moreinfo"><a href="#" class="btn btn-moreinfo">More info</a></div>-->
+            </div>
+            <div class="col-lg-4">
+                <div class="solution-icon"><img src="static/img/ico_solutions.png" alt="" class="img-responsive"/></div>
+                <div class="text-center solution-content">
+                    <h3>I.T Soluction</h3>
+                    <h4>and service</h4>
+                    <p>Turn Key Office Setup <br> (Complete Hardware and <br > Software solutions).</p>
+                    <p>Medical Billing and <br >Patient Record Mangement <br > Setup and User Training.</p>
+                    <p>Networking and Backup <br >Solutions.</p>
+                </div>
+               <!-- <div class="text-center solution-moreinfo"><a href="#" class="btn btn-moreinfo">More info</a></div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row botones">
+<div class="text-center col-lg-4 info1"><a href="#" class="btn btn-moreinfo">More info</a></div>
+<div class="text-center col-lg-4 info2"><a href="#" class="btn btn-moreinfo">More info</a></div>
+<div class="text-center col-lg-4 info3"><a href="#" class="btn btn-moreinfo">More info</a></div>
+</div>
+<div class="weare-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><div class="text-center ads-title">we are what<br>we are looking for</div></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><div class="text-center ads-box-outside"><div class="ads-box-inside">specialized in medical billing,<br>record management</div></div></div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+	<section id="a3">
+        <div class="col-lg-12"><div class="text-center aboutus-icon"><img src="static/img/ico_about.png" alt=""/></div></div>
+        <div class="col-lg-12"><div class="text-center titulo aboutus-titulo">About Us</div></div>
+    </div>
+</div>
+<div class="aboutus-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-justify">
+						We are an established medical billing company with a team of professional that are ready to take the worries and frustrations of medical billing off of your hands and allow you more time to do what you love, which is take care of you patients.<br><br>
+						Our team members are all well versed in the IC9 coding and have all been trained and certified in the new ICD10 billing codes. We are up to date with all the HIPPA compliance laws and are constantly updating ourselves, we strive to stay up to date with what is going on in the world of Medical Billing to keep our custumers up to date as well, we undestand as medical profesional you do not have the time to keep up to speed with all the changes that are going on, that is where we come in. Doctors have too many other things to worry about, besides accurate medical billing.
+						</div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="text-justify aboutus-blue-brand">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                            quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="">
+                            <div class="text-center aboutus-viewservices"><a href="#" class="btn btn-moreinfo">view our services</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6"><div class="text-center aboutus-girl"><img src="static/img/img_about.png" alt=""/></div></div>
+        </div>
+    </div>
+</div>
+<div class="contact-bg">
+    <div class="container">
+        <div class="row">
+		<section id="a4">
+            <div class="col-lg-12">
+                <div class="text-center contactus-icon"><img src="static/img/ico_contac.png" alt=""/></div>
+                <div class="col-lg-12"><div class="text-center titulo contactus-titulo"> &bullet; Contact Us &bullet;</div></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form method="post" >
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="contactus-form contactus-color">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="name">Full Name*</label>
+                                            <input type="text" class="form-control contactus-form-control" id="name"
+                                                   placeholder="Full Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="email">Your Email*</label>
+                                            <input type="email" class="form-control contactus-form-control" id="email"
+                                                   placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="phone">Your Phone*</label>
+                                            <input type="tel" class="form-control contactus-form-control" id="phone"
+                                                   placeholder="Phone Number">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">sdf</div>
+                        <div class="col-lg-6">
+                            <div class="contactus-color">
+                                <div class="form-group">
+                                    <label for="text">Menssage</label>
+                                    <textarea class="form-control contactus-form-control" rows="8 " placeholder="Text Menssage" ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">df</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center contactus-btn">
+                                <input type="button" value="" name="submit" class="contactus-btn-send"  onClick="SendEmail()" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center contactus-icon-location"><img src="static/img/ico_location.png" alt=""/></div>
+               <div class="text-center titulo contactus-titulo"> &bullet; our location &bullet;</div>
+            </div>
+            <div class="col-lg-12">
+                <div class="contactus-info">
+                    <div class="col-lg-12"><div class="text-center contactus-titulo">Address</div></div>
+                    <p class="text-center contactus-color-white">
+								18191 NW 68th Ave<br />
+								FL 33015-3996<br />
+								United States<br />
+                    </p>
+                </div>
+                <div class="contactus-info phone">
+                    <div class="col-lg-12"><div class="text-center contactus-titulo">Phone</div></div>
+                    <p class="text-center contactus-color-white">
+                        305 345 2134
+                    </p>
+                </div>
+                <div class="contactus-info">
+                    <div class="col-lg-12"><div class="text-center contactus-titulo">Email</div></div>
+                    <p class="text-center contactus-color-white">
+                        medcoding@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maps-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8"><div class="text-center maps">
+                <div style="text-decoration:none; overflow:hidden; height:200px; width:100%; max-width:100%;">
+                    <div id="google-maps-canvas" style="height:200px;width:100%;max-width:100%;">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.5907697540338!2d-80.31199850612248!3d25.937968542237225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a51a8b1ccf3b%3A0xe5396cddf932213d!2s18191+NW+68th+Ave%2C+Hialeah%2C+FL+33015!5e0!3m2!1sen!2sus!4v1442602262302" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <a class="google-map-html" href="https://www.tubeembed.com/" id="grab-map-authorization">tubeembed.com</a>
+                    <style>#google-maps-canvas .map-generator {
+                        max-width: 100%;
+                        max-height: 100%;
+                        background: none;</style>
+                </div>
+            </div></div>
+            <div class="col-lg-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"><div class="text-center maps-logo"><img src="static/img/logo_medcoding_blanco.png" alt=""/></div></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center maps-social">
+                    <img src="static/img/btn_face.png" alt=""/>
+                    <img src="static/img/btn_twitter.png" alt=""/>
+                    <img src="static/img/btn_google.png" alt=""/>
+                    <img src="static/img/btn_1.png" alt=""/>
+                    <img src="static/img/btn_2.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copy-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><div class="text-center footer">Copyrigth © 2015, Powered by NimbusPC</div></div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="static/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
